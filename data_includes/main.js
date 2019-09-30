@@ -22,8 +22,6 @@ PennController.Sequence("LexTale_instructions", "LexTale_trials", "closing")
         newText("<p>Please don’t let this confuse you. This experiment is not about detecting such subtle spelling differences anyway.</p>") 
         ,
         newText("<p>You have as much time as you like for each decision. This part of the experiment will take about 5 minutes.</p>") 
-        ,
-        newText("<p>Click the button below to start the experiment.</p>")
     	,
         newText("<p>Please enter your ID and then click the button below to start the experiment.</p>")
         ,
