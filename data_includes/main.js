@@ -56,8 +56,8 @@ PennController.Sequence("LexTale_instructions", "LexTale_trials", "closing")
                 .settings.bold()
             ,
             newCanvas(800, 600)
-                .settings.add( 100,     100,    getText("yes"))
-                .settings.add( 600,     100,    getText("no"))
+                .settings.add( 0,     100,    getText("yes"))
+                .settings.add( 400,     100,    getText("no"))
                 .print()
             ,
             newSelector()
