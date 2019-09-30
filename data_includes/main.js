@@ -65,9 +65,9 @@ PennController.Sequence("LexTale_instructions", "LexTale_trials", "closing")
                 .settings.log()
                 .wait()
         )
-    .log( "ID"          , getVar("ID")    )
-    .log( "Stimulus"    , trial.Stimulus)
-    .log( "Type"        , trial.Type)
+    .log( "Stimulus"    , trial.Stimulus    )
+    .log( "Type"        , trial.Type        )
+    .log( "Block"       , trial.Block       )
     )
     
 // Closing text
