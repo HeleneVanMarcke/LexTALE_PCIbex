@@ -32,7 +32,7 @@ PennController.Sequence("LexTale_instructions", "LexTale_trials", "closing")
     
 // Trials
     PennController.Template(
-        PennController.GetTable( "LexTale.csv")
+        PennController.GetTable( "stimuli.csv")
             .filter(trial => trial.Block == "dummy")
         ,
         trial => PennController("LexTale_trials",
