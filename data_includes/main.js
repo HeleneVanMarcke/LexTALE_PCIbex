@@ -42,18 +42,19 @@ PennController.Sequence("LexTale_instructions", "LexTale_trials", "closing")
                 .settings.bold()
                 .settings.center()
                 .print()
+              ,
+            newText("no", "No")
+                .settings.css("font-size", "60px")
+                .settings.css("font-family", "avenir")
+                .settings.color("red")
+                .settings.bold()
             ,
             newText("yes", "Yes")
                 .settings.css("font-size", "60px")
                 .settings.css("font-family", "avenir")
                 .settings.color("green")
                 .settings.bold()
-            ,
-            newText("no", "No")
-                .settings.css("font-size", "60px")
-                .settings.css("font-family", "avenir")
-                .settings.color("red")
-                .settings.bold()
+
             ,
             newCanvas(800, 600)
                 .settings.add( 0,     100,    getText("yes"))
