@@ -1,4 +1,5 @@
 PennController.ResetPrefix(null);
+PennController.Sequence("LexTale_instructions", "LexTale_trials", "closing")
 
 PennController(
     
