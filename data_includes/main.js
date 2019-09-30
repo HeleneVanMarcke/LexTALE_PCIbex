@@ -33,7 +33,6 @@ PennController.Sequence("LexTale_instructions", "LexTale_trials", "closing")
 // Trials
     PennController.Template(
         PennController.GetTable( "stimuli.csv")
-            .filter(trial => trial.Block == "dummy")
         ,
         trial => PennController("LexTale_trials",
             newText("stimulus", trial.Stimulus)
@@ -62,7 +61,7 @@ PennController.Sequence("LexTale_instructions", "LexTale_trials", "closing")
                 .print()
             ,
             newSelector()
-                .settings.add(getText("yes") , getText("no") )
+                .settings.add(getText("no") , getText("yes") )
                 .settings.log()
                 .wait()
         )
