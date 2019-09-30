@@ -25,9 +25,20 @@ PennController.Sequence("LexTale_instructions", "LexTale_trials", "closing")
         ,
         newText("<p>Click the button below to start the experiment.</p>")
     	,
+        newText("<p>Please enter your ID and then click the button below to start the experiment.</p>")
+        ,
+        newTextInput("ID")
+            .print()
+        ,
         newButton("Start")
             .print()
             .wait()
+        ,
+        newVar("ID")
+            .settings.global()
+            .set( getTextInput("ID") )
+        )
+    .log( "ID" , getVar("ID") 
     )
     
 // Trials
