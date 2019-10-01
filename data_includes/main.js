@@ -1,8 +1,13 @@
+//// Script to implement the English version of the LexTALE test (Lemhöfer & Broersma, 2012) in Ibex using PennController ////
+/// Author: Mieke Slim
+
 PennController.ResetPrefix(null);
+//// Use this command before publishing:
+// PennController.DebugOff() 
 PennController.Sequence("LexTale_instructions", "LexTale_trials", "closing")
 
 //// Implement the LexTale test
-// Instructions:
+/// Instructions:
     PennController("LexTale_instructions",
         defaultText
             .print()
@@ -39,7 +44,7 @@ PennController.Sequence("LexTale_instructions", "LexTale_trials", "closing")
     .log( "ID" , getVar("ID") 
     )
     
-// Trials
+/// Trials
     PennController.Template(
         PennController.GetTable( "stimuli.csv")
         ,
@@ -80,7 +85,7 @@ PennController.Sequence("LexTale_instructions", "LexTale_trials", "closing")
     .log( "ID"          , getVar("ID")      )
     )
     
-// Closing text
+/// Closing text
     PennController("closing",
         defaultText
             .print()
