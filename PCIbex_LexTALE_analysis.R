@@ -64,5 +64,5 @@ results = subset(results, Block == 'trial')
 scores = dcast(aggregate(Accuracy ~ ID + Type, FUN = sum, data = results), formula = ID ~ Type, value.var = "Accuracy")
 ## And then, calculate the final score with the following formula: ((number of words correct/40*100) + (number of nonwords correct/20*100)) / 2
 scores$score = ((scores$word/40*100) + (scores$nonword/20*100)) / 2 
-
+View(scores)
   
