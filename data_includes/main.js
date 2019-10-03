@@ -16,7 +16,7 @@ PennController.Sequence("LexTale_instructions", "LexTale_trials", "closing")
         newCanvas("myCanvas", 600, 600)
             .settings.add(0,0, getText("LexTale_InstructionText")
             .print()
-                   
+        ,           
         newButton("Start")
             .print()
             .wait()
