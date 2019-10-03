@@ -61,7 +61,10 @@ PennController.Sequence("LexTale_instructions", "LexTale_trials", "closing")
     .log( "Type"        , trial.Type        )
     .log( "Block"       , trial.Block       )
     )
-    
+ 
+// Send results to server
+PennController.SendResults();
+
 /// Closing text
     PennController("closing",
         defaultText
