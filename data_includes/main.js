@@ -10,38 +10,16 @@ PennController.Sequence("LexTale_instructions", "LexTale_trials", "closing")
 /// Instructions:
     PennController("LexTale_instructions",
         defaultText
+        ,
+        newText("LexTale_InstructionText", "<p>Welcome!</p> <br> <p>This test consists of about 60 trials, in each of which you will see a string of letters. Your task is to decide whether this is an existing English word or not.</p>" <br><br>If you think it is an existing English word, you click on <strong>yes</strong>, and if you think it is not an existing English word, you click on <strong>no</strong>. If you are sure that the word exists, even though you don’t know its exact meaning, you may still respond <strong>yes</strong>. But if you are not sure if it is an existing word, you should respond <strong>no</strong>. </p>") <br><br> In this test, we use British English rather than American English spelling. For example: <i>realise</i> instead of <i>realize</i>; <i>colour</i> instead of <i>color</i>, and so on. Please don’t let this confuse you. This test is not about detecting such subtle spelling differences anyway <br><br> You have as much time as you like for each decision. This test will take about 5 minutes.</p>") 
+        ,
+        newCanvas("myCanvas", 600, 600)
+            .settings.add(0,0, getText("LexTale_InstructionText")
             .print()
-        ,
-        newText("<p>Welcome!</p>")
-        ,
-        newText("<p>This test consists of about 60 trials, in each of which you will see a string of letters. Your task is to decide whether this is an existing English word or not.</p>")
-        ,
-        newText("<p>If you think it is an existing English word, you click on <strong>yes</strong>, and if you think it is not an existing English word, you click on <strong>no</strong>.</p>")
-        ,
-        newText("<p>If you are sure that the word exists, even though you don’t know its exact meaning, you may still respond <strong>yes</strong>.</p>")
-        ,
-        newText("<p>But if you are not sure if it is an existing word, you should respond <strong>no</strong>. </p>")
-        ,
-        newText("<p>In this experiment, we use British English rather than American English spelling. For example: <italic>realise</italic> instead of <italic>realize</italic>; <italic>colour</italic> instead of <italic>color</italic>, and so on.</p>") 
-        ,
-        newText("<p>Please don’t let this confuse you. This experiment is not about detecting such subtle spelling differences anyway.</p>") 
-        ,
-        newText("<p>You have as much time as you like for each decision. This part of the experiment will take about 5 minutes.</p>") 
-    	,
-        newText("<p>Please enter your ID and then click the button below to start the experiment.</p>")
-        ,
-        newTextInput("ID")
-            .print()
-        ,
+                   
         newButton("Start")
             .print()
             .wait()
-        ,
-        newVar("ID")
-            .settings.global()
-            .set( getTextInput("ID") )
-        )
-    .log( "ID" , getVar("ID") 
     )
     
 /// Trials
@@ -82,7 +60,6 @@ PennController.Sequence("LexTale_instructions", "LexTale_trials", "closing")
     .log( "Stimulus"    , trial.Stimulus    )
     .log( "Type"        , trial.Type        )
     .log( "Block"       , trial.Block       )
-    .log( "ID"          , getVar("ID")      )
     )
     
 /// Closing text
