@@ -42,7 +42,7 @@ read.pcibex <- function(filepath, auto.colnames=TRUE, fun.col=function(col,cols)
 
 ## Prepare raw results file
 results <- subset(read.pcibex("results.csv"), PennElementType == 'Selector')  # Here, it is assumed that you saved the results file as a csv file with the name 'results' in the R working directory, moreover we're only interested in the responses on the Selector element in the trials
-results = select(results, Item.number, Element.number, Block, ID, Stimulus, Type, Block, Value) # I have selected the only columns I am interested in for the analyses, in order to get a better overview of the data, feel free to adjust to your liking 
+results = select(results, Item.number, Element.number, Block, Subject, Stimulus, Type, Block, Value) # I have selected the only columns I am interested in for the analyses, in order to get a better overview of the data, feel free to adjust to your liking 
 ## Deduce the accuracy per trial per participant:
 for(i in 1:nrow(results)){
   if ((results$Type[i] == "word") && (results$Value[i] == "yes")) {
@@ -61,8 +61,7 @@ results = subset(results, Block == 'trial')
 
 ## Calculate the scores per participant
 # First, calculate the sum of selected words and nonwords per participant:
-scores = dcast(aggregate(Accuracy ~ ID + Type, FUN = sum, data = results), formula = ID ~ Type, value.var = "Accuracy")
+scores = dcast(aggregate(Accuracy ~ Subject + Type, FUN = sum, data = results), formula = Subject ~ Type, value.var = "Accuracy")
 ## And then, calculate the final score with the following formula: ((number of words correct/40*100) + (number of nonwords correct/20*100)) / 2
 scores$score = ((scores$word/40*100) + (scores$nonword/20*100)) / 2 
 View(scores)
-  
