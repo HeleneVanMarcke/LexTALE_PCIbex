@@ -63,7 +63,7 @@ PennController.Sequence("LexTale_instructions", "LexTale_trials", "closing")
     .log( "Stimulus"    , trial.Stimulus    )
     .log( "Type"        , trial.Type        )
     .log( "Block"       , trial.Block       )
-  //  .log( "ID" , getVar("ID") )
+    .log( "ID" , getVar("ID") )
     )
  
 // Send results to server
