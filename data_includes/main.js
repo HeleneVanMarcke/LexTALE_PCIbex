@@ -16,11 +16,15 @@ PennController.Sequence("LexTale_instructions", "LexTale_trials", "closing")
         newCanvas("myCanvas", 600, 600)
             .settings.add(0,0, getText("LexTale_InstructionText"))
             .print()
-        ,           
+                   
+        ,
+        newTextInput("ID", randomnumber = Math.floor(Math.random()*1000000))                      
+        ,
         newButton("Start")
             .print()
             .wait()
     )
+    .log( "ID" , getVar("ID") )
     
 /// Trials
     PennController.Template(
@@ -60,6 +64,7 @@ PennController.Sequence("LexTale_instructions", "LexTale_trials", "closing")
     .log( "Stimulus"    , trial.Stimulus    )
     .log( "Type"        , trial.Type        )
     .log( "Block"       , trial.Block       )
+    .log( "ID" , getVar("ID") )
     )
  
 // Send results to server
