@@ -12,10 +12,13 @@ PennController.Sequence("LexTale_instructions", "LexTale_trials", "closing")
 // Subject info
    PennController("LexTale_instructions",
     defaultText
-        .print()
     ,
-    newText("Welcome! <br><br> This test consists of about 60 trials, in each of which you will see a string of letters. Your task is to decide whether this is an existing English word or not. <br><br>If you think it is an existing English word, you click on <strong>yes</strong>, and if you think it is not an existing English word, you click on <strong>no</strong>. If you are sure that the word exists, even though you don’t know its exact meaning, you may still respond <strong>yes</strong>. But if you are not sure if it is an existing word, you should respond <strong>no</strong>. <br><br> In this test, we use British English rather than American English spelling. For example: <i>realise</i> instead of <i>realize</i>; <i>colour</i> instead of <i>color</i>, and so on. Please don’t let this confuse you. This test is not about detecting such subtle spelling differences anyway <br><br> You have as much time as you like for each decision. This test will take about 5 minutes.")
+    newText("LexTale_InstructionText", "Welcome! <br><br> This test consists of about 60 trials, in each of which you will see a string of letters. Your task is to decide whether this is an existing English word or not. <br><br>If you think it is an existing English word, you click on <strong>yes</strong>, and if you think it is not an existing English word, you click on <strong>no</strong>. If you are sure that the word exists, even though you don’t know its exact meaning, you may still respond <strong>yes</strong>. But if you are not sure if it is an existing word, you should respond <strong>no</strong>. <br><br> In this test, we use British English rather than American English spelling. For example: <i>realise</i> instead of <i>realize</i>; <i>colour</i> instead of <i>color</i>, and so on. Please don’t let this confuse you. This test is not about detecting such subtle spelling differences anyway <br><br> You have as much time as you like for each decision. This test will take about 5 minutes.") 
     ,
+    newCanvas("myCanvas", 600, 600)
+            .settings.add(0,0, getText("LexTale_InstructionText"))
+            .print()
+    ,              
     newTextInput("Subject", randomnumber = Math.floor(Math.random()*1000000))             
     ,
     newButton("Start")
