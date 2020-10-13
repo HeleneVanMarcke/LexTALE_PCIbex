@@ -63,7 +63,7 @@ PennController.Sequence("LexTale_instructions", "LexTale_trials", "closing")
     )
  
 // Send results to server
-PennController.SendResults();
+//PennController.SendResults();
 
 /// Closing text
     PennController("closing",
